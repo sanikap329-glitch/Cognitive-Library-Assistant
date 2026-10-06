@@ -1,0 +1,947 @@
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f9fc;
+    color: #1d2a3a;
+    line-height: 1.6;
+}
+
+
+button {
+    font-family: inherit;
+}
+
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 7%;
+
+    background: white;
+
+    box-shadow:
+        0 2px 12px rgba(0,0,0,0.08);
+}
+
+
+.logo {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+
+nav a {
+    text-decoration: none;
+    color: #344054;
+    font-weight: 600;
+}
+
+
+nav a:hover {
+    color: #1f3c88;
+}
+
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 390px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eaf0ff,
+            #f8faff
+        );
+}
+
+
+.hero-content {
+    max-width: 800px;
+    padding: 50px 20px;
+}
+
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 18px;
+}
+
+
+.hero h1 span {
+    color: #3157a5;
+}
+
+
+.hero p {
+    font-size: 18px;
+    color: #667085;
+}
+
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search-section {
+    padding: 70px 20px;
+}
+
+
+.search-box {
+    max-width: 900px;
+    margin: auto;
+
+    text-align: center;
+}
+
+
+.search-box h2 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+
+.search-box p {
+    color: #667085;
+    margin-bottom: 25px;
+}
+
+
+textarea {
+    width: 100%;
+    min-height: 130px;
+
+    padding: 18px;
+
+    border:
+        1px solid #d0d5dd;
+
+    border-radius: 12px;
+
+    resize: vertical;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+
+textarea:focus {
+    border-color: #3157a5;
+}
+
+
+.search-btn {
+    margin-top: 18px;
+
+    padding: 14px 30px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #1f3c88;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.search-btn:hover {
+    opacity: 0.9;
+}
+
+
+.examples {
+    margin-top: 20px;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+
+.example-btn {
+    padding: 9px 15px;
+
+    border:
+        1px solid #d0d5dd;
+
+    background: white;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+}
+
+
+.example-btn:hover {
+    background: #eef3ff;
+}
+
+
+
+/* =====================================================
+   QUERY CARDS
+===================================================== */
+
+.query-section {
+    padding: 50px 7%;
+    background: white;
+}
+
+
+.query-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+.query-cards {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+.query-card {
+    text-align: center;
+
+    padding: 25px;
+
+    border:
+        1px solid #e4e7ec;
+
+    border-radius: 12px;
+
+    background: #fafbff;
+}
+
+
+.query-card span {
+    font-size: 28px;
+}
+
+
+.query-card h3 {
+    margin-top: 10px;
+}
+
+
+.query-card p {
+    margin-top: 6px;
+
+    color: #3157a5;
+
+    font-weight: bold;
+}
+
+
+
+/* =====================================================
+   RECOMMENDATIONS
+===================================================== */
+
+.recommendations-section {
+    padding: 70px 7%;
+}
+
+
+.recommendations-section > h2 {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+
+.books-grid {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 22px;
+}
+
+
+.book-card {
+    position: relative;
+
+    background: white;
+
+    padding: 28px;
+
+    border-radius: 15px;
+
+    border:
+        1px solid #e4e7ec;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.05);
+}
+
+
+.book-number {
+    position: absolute;
+
+    top: 15px;
+    right: 18px;
+
+    font-weight: bold;
+
+    color: #98a2b3;
+}
+
+
+.book-icon {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+
+.book-card h3 {
+    font-size: 21px;
+    margin-bottom: 5px;
+}
+
+
+.author {
+    color: #667085;
+}
+
+
+.book-details {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 18px;
+}
+
+
+.book-details span {
+    background: #f2f4f7;
+
+    padding: 5px 9px;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+}
+
+
+.score {
+    margin-top: 18px;
+
+    font-weight: bold;
+
+    color: #3157a5;
+}
+
+
+.reason {
+    margin-top: 15px;
+
+    padding: 13px;
+
+    background: #f3f6ff;
+
+    border-radius: 8px;
+
+    line-height: 1.5;
+}
+
+
+.details-btn {
+    margin-top: 18px;
+
+    padding: 11px 18px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #1f3c88;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: 600;
+}
+
+
+.details-btn:hover {
+    opacity: 0.9;
+}
+
+
+.empty-message,
+.loading,
+.error-message {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 40px;
+
+    background: white;
+
+    border-radius: 12px;
+
+    color: #667085;
+}
+
+
+.error-message {
+    color: #b42318;
+}
+
+
+
+/* =====================================================
+   ANALYTICS
+===================================================== */
+
+.analytics-section {
+    padding: 75px 7%;
+
+    background: #eef3fb;
+}
+
+
+.analytics-header {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.analytics-header h2 {
+    font-size: 32px;
+}
+
+
+.analytics-header p {
+    color: #667085;
+}
+
+
+.refresh-btn {
+    padding: 11px 18px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #1f3c88;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: 600;
+}
+
+
+
+/* =====================================================
+   ANALYTICS CARDS
+===================================================== */
+
+.analytics-cards {
+    max-width: 1100px;
+
+    margin: 35px auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+.analytics-card {
+    background: white;
+
+    padding: 23px;
+
+    border-radius: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,0.05);
+}
+
+
+.analytics-icon {
+    font-size: 30px;
+}
+
+
+.analytics-card h3 {
+    font-size: 14px;
+
+    color: #667085;
+}
+
+
+.analytics-card p {
+    font-size: 27px;
+
+    font-weight: bold;
+
+    margin-top: 3px;
+}
+
+
+
+/* =====================================================
+   CHARTS
+===================================================== */
+
+.charts-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 20px;
+}
+
+
+.chart-card {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 13px;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,0.05);
+}
+
+
+.chart-card h3 {
+    margin-bottom: 15px;
+}
+
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+
+.chart-container {
+    height: 320px;
+
+    position: relative;
+}
+
+
+.year-chart {
+    height: 300px;
+}
+
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about-section {
+    padding: 70px 7%;
+
+    background: white;
+
+    text-align: center;
+}
+
+
+.about-section > p {
+    max-width: 800px;
+
+    margin: 15px auto 40px;
+
+    color: #667085;
+}
+
+
+.about-grid {
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.about-grid > div {
+    padding: 25px;
+
+    background: #f7f9fc;
+
+    border-radius: 12px;
+}
+
+
+.about-grid p {
+    color: #667085;
+
+    margin-top: 8px;
+}
+
+
+
+/* =====================================================
+   BOOK MODAL
+===================================================== */
+
+.book-modal {
+    display: none;
+
+    position: fixed;
+
+    z-index: 1000;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        rgba(0,0,0,0.55);
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+}
+
+
+.book-modal-content {
+    position: relative;
+
+    width: 90%;
+
+    max-width: 680px;
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,0.25);
+}
+
+
+.close-modal {
+    position: absolute;
+
+    right: 18px;
+
+    top: 12px;
+
+    border: none;
+
+    background: none;
+
+    font-size: 32px;
+
+    cursor: pointer;
+
+    color: #667085;
+}
+
+
+.modal-book-icon {
+    font-size: 45px;
+
+    margin-bottom: 10px;
+}
+
+
+.book-modal-content h2 {
+    font-size: 28px;
+
+    margin-bottom: 5px;
+
+    padding-right: 35px;
+}
+
+
+.modal-info {
+    color: #667085;
+
+    font-size: 16px;
+}
+
+
+.modal-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 20px;
+}
+
+
+.modal-tags span {
+    padding: 6px 10px;
+
+    border-radius: 7px;
+
+    background: #eef2f7;
+
+    font-size: 13px;
+}
+
+
+.book-modal-content hr {
+    border: none;
+
+    border-top:
+        1px solid #eaecf0;
+
+    margin: 25px 0;
+}
+
+
+.book-modal-content h3 {
+    margin-top: 20px;
+
+    margin-bottom: 7px;
+}
+
+
+.book-modal-content p {
+    color: #475467;
+
+    line-height: 1.7;
+}
+
+
+.modal-reason {
+    padding: 14px;
+
+    background: #f3f6ff;
+
+    border-radius: 8px;
+}
+
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    padding: 30px;
+
+    background: #172033;
+
+    color: #d0d5dd;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+
+footer p + p {
+    margin-top: 5px;
+}
+
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .query-cards,
+    .analytics-cards {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .books-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .about-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .header {
+
+        flex-direction: column;
+
+        gap: 12px;
+
+    }
+
+
+    nav {
+
+        gap: 15px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 34px;
+
+    }
+
+
+    .query-cards,
+    .analytics-cards {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .charts-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .full-width {
+
+        grid-column: auto;
+
+    }
+
+
+    .analytics-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+    }
+
+
+    .book-modal-content {
+
+        padding: 25px;
+
+    }
+
+}

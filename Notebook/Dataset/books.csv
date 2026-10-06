@@ -1,0 +1,16 @@
+Book_ID,Title,Author,Subject,Description,Keywords,Difficulty,Year,Available
+B001,Python for Data Analysis,Wes McKinney,Data Science,"Learn Python programming for data manipulation, analysis and visualization.",Python Pandas NumPy Data Analysis Visualization,Beginner,2022,Yes
+B002,Hands-On Machine Learning,Aurélien Géron,Machine Learning,Learn machine learning using practical Python examples and real datasets.,Machine Learning Python Regression Classification,Intermediate,2022,Yes
+B003,Database System Concepts,Abraham Silberschatz,DBMS,"Learn database systems, SQL, transactions and database architecture.",Database SQL DBMS Transactions,Intermediate,2019,No
+B004,Deep Learning,Ian Goodfellow,Deep Learning,"Learn neural networks, deep learning and modern machine learning techniques.",Deep Learning Neural Networks CNN AI,Advanced,2016,Yes
+B005,Introduction to Algorithms,Thomas H. Cormen,Algorithms,"Learn algorithms, data structures and algorithm analysis.",Algorithms Data Structures Programming,Intermediate,2022,Yes
+B006,Clean Code,Robert C. Martin,Programming,Learn clean programming practices and writing maintainable software.,Programming Software Development Code Quality,Beginner,2008,Yes
+B007,Artificial Intelligence: A Modern Approach,Stuart Russell,Artificial Intelligence,"Learn artificial intelligence, intelligent agents and problem solving.",Artificial Intelligence AI Machine Learning Agents,Advanced,2020,No
+B008,The Data Warehouse Toolkit,Ralph Kimball,Data Warehousing,"Learn data warehouse design, dimensional modeling and business intelligence.",Data Warehouse Business Intelligence ETL,Intermediate,2002,Yes
+B009,Learning SQL,Alan Beaulieu,SQL,"Learn SQL queries, database operations and data retrieval.",SQL Database Queries Data Retrieval,Beginner,2020,Yes
+B010,Statistics for Data Science,Andrew Bruce,Statistics,Learn statistics and probability concepts used in data science.,Statistics Probability Data Science,Beginner,2020,Yes
+B011,Computer Networks,Andrew S. Tanenbaum,Computer Networks,"Learn computer networking, protocols and network architecture.",Networking TCP IP Internet Protocols,Intermediate,2011,No
+B012,Operating System Concepts,Abraham Silberschatz,Operating Systems,"Learn operating system concepts, processes, memory and file systems.",Operating Systems Processes Memory Linux,Intermediate,2018,Yes
+B013,Power BI for Beginners,Mike Carlo,Data Analytics,"Learn Power BI, dashboards, reports and business analytics.",Power BI Dashboard Data Visualization Analytics,Beginner,2023,Yes
+B014,Natural Language Processing with Python,Steven Bird,NLP,Learn natural language processing and text analysis using Python.,NLP Text Processing Python Language,Intermediate,2009,Yes
+B015,Practical Data Science,Nina Zumel,Data Science,"Learn practical data science techniques, analysis and machine learning.",Data Science Python Machine Learning Analytics,Beginner,2020,Yes

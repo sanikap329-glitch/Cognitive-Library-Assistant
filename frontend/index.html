@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Cognitive Library Assistant
+    </title>
+
+
+    <!-- Chart.js -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/chart.js">
+    </script>
+
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     HEADER
+========================================== -->
+
+<header class="header">
+
+    <div class="logo">
+        📚 Cognitive Library Assistant
+    </div>
+
+
+    <nav>
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="#analytics">
+            Analytics
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ==========================================
+     HERO
+========================================== -->
+
+<section
+    id="home"
+    class="hero"
+>
+
+    <div class="hero-content">
+
+        <h1>
+            Find the Right Book
+            <span>Smarter</span>
+        </h1>
+
+        <p>
+            An intelligent library assistant that
+            understands your learning needs and
+            recommends suitable books.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     SEARCH
+========================================== -->
+
+<section class="search-section">
+
+    <div class="search-box">
+
+        <h2>
+            What do you want to learn?
+        </h2>
+
+        <p>
+            Describe your learning requirement
+            in natural language.
+        </p>
+
+
+        <textarea
+            id="queryInput"
+            placeholder="Example: I am a beginner and want to learn Python for data analysis"
+        ></textarea>
+
+
+        <button
+            id="searchButton"
+            class="search-btn"
+        >
+            🔍 Find Books
+        </button>
+
+
+        <div class="examples">
+
+            <button
+                class="example-btn"
+                data-query="I am a beginner and want to learn Python for data analysis"
+            >
+                Python for beginners
+            </button>
+
+
+            <button
+                class="example-btn"
+                data-query="I need books for my data science project"
+            >
+                Data Science Project
+            </button>
+
+
+            <button
+                class="example-btn"
+                data-query="I need advanced books for research"
+            >
+                Research
+            </button>
+
+
+            <button
+                class="example-btn"
+                data-query="I need books for exam preparation"
+            >
+                Exam Preparation
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     QUERY UNDERSTANDING
+========================================== -->
+
+<section
+    id="querySection"
+    class="query-section"
+>
+
+    <h2>
+        Understanding Your Query
+    </h2>
+
+
+    <div class="query-cards">
+
+
+        <div class="query-card">
+
+            <span>
+                🎯
+            </span>
+
+            <h3>
+                Difficulty
+            </h3>
+
+            <p id="difficulty">
+                -
+            </p>
+
+        </div>
+
+
+        <div class="query-card">
+
+            <span>
+                🧠
+            </span>
+
+            <h3>
+                Intent
+            </h3>
+
+            <p id="intent">
+                -
+            </p>
+
+        </div>
+
+
+        <div class="query-card">
+
+            <span>
+                🛠️
+            </span>
+
+            <h3>
+                Practical Learning
+            </h3>
+
+            <p id="practical">
+                -
+            </p>
+
+        </div>
+
+
+        <div class="query-card">
+
+            <span>
+                📊
+            </span>
+
+            <h3>
+                Confidence
+            </h3>
+
+            <p id="confidence">
+                -
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     RECOMMENDATIONS
+========================================== -->
+
+<section
+    id="recommendations"
+    class="recommendations-section"
+>
+
+    <h2>
+        Recommended Books
+    </h2>
+
+
+    <div
+        id="results"
+        class="books-grid"
+    >
+
+        <div class="empty-message">
+
+            Search for something to get
+            personalized recommendations.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     ANALYTICS
+========================================== -->
+
+<section
+    id="analytics"
+    class="analytics-section"
+>
+
+
+    <div class="analytics-header">
+
+        <div>
+
+            <h2>
+                📊 Library Analytics
+            </h2>
+
+            <p>
+                Overview of the available
+                library collection.
+            </p>
+
+        </div>
+
+
+        <button
+            id="refreshAnalytics"
+            class="refresh-btn"
+        >
+            🔄 Refresh
+        </button>
+
+    </div>
+
+
+
+    <!-- Analytics Cards -->
+
+    <div class="analytics-cards">
+
+
+        <div class="analytics-card">
+
+            <div class="analytics-icon">
+                📚
+            </div>
+
+            <div>
+
+                <h3>
+                    Total Books
+                </h3>
+
+                <p id="totalBooks">
+                    0
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="analytics-card">
+
+            <div class="analytics-icon">
+                ✅
+            </div>
+
+            <div>
+
+                <h3>
+                    Available Books
+                </h3>
+
+                <p id="availableBooks">
+                    0
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="analytics-card">
+
+            <div class="analytics-icon">
+                ❌
+            </div>
+
+            <div>
+
+                <h3>
+                    Unavailable Books
+                </h3>
+
+                <p id="unavailableBooks">
+                    0
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="analytics-card">
+
+            <div class="analytics-icon">
+                📈
+            </div>
+
+            <div>
+
+                <h3>
+                    Availability Rate
+                </h3>
+
+                <p id="availabilityRate">
+                    0%
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Charts -->
+
+    <div class="charts-grid">
+
+
+        <div class="chart-card">
+
+            <h3>
+                Books by Subject
+            </h3>
+
+            <div class="chart-container">
+
+                <canvas
+                    id="subjectChart"
+                ></canvas>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="chart-card">
+
+            <h3>
+                Books by Difficulty
+            </h3>
+
+            <div class="chart-container">
+
+                <canvas
+                    id="difficultyChart"
+                ></canvas>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="chart-card full-width">
+
+            <h3>
+                Books by Publication Year
+            </h3>
+
+            <div class="chart-container year-chart">
+
+                <canvas
+                    id="yearChart"
+                ></canvas>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     ABOUT
+========================================== -->
+
+<section
+    id="about"
+    class="about-section"
+>
+
+    <h2>
+        About the Project
+    </h2>
+
+
+    <p>
+
+        The Cognitive Library Assistant is an
+        intelligent book recommendation system
+        designed to understand a user's learning
+        requirements using natural language.
+
+    </p>
+
+
+    <div class="about-grid">
+
+
+        <div>
+
+            <h3>
+                🔎 Intelligent Search
+            </h3>
+
+            <p>
+                Uses TF-IDF and cosine similarity
+                to find relevant books.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                🧠 Query Understanding
+            </h3>
+
+            <p>
+                Detects difficulty level, intent
+                and practical learning preference.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                📊 Analytics
+            </h3>
+
+            <p>
+                Provides visual insights into
+                the library collection.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     BOOK DETAILS MODAL
+========================================== -->
+
+<div
+    id="bookModal"
+    class="book-modal"
+>
+
+
+    <div class="book-modal-content">
+
+
+        <button
+            class="close-modal"
+            id="closeModal"
+        >
+            ×
+        </button>
+
+
+        <div class="modal-book-icon">
+            📖
+        </div>
+
+
+        <h2 id="modalTitle">
+            Book Title
+        </h2>
+
+
+        <p
+            id="modalAuthor"
+            class="modal-info"
+        ></p>
+
+
+        <div class="modal-tags">
+
+            <span id="modalSubject">
+            </span>
+
+            <span id="modalDifficulty">
+            </span>
+
+            <span id="modalYear">
+            </span>
+
+            <span id="modalAvailability">
+            </span>
+
+        </div>
+
+
+        <hr>
+
+
+        <h3>
+            Description
+        </h3>
+
+        <p id="modalDescription">
+        </p>
+
+
+        <h3>
+            Keywords
+        </h3>
+
+        <p id="modalKeywords">
+        </p>
+
+
+        <h3>
+            💡 Why Recommended?
+        </h3>
+
+        <p
+            id="modalReason"
+            class="modal-reason"
+        >
+        </p>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer>
+
+    <p>
+        © 2026 Cognitive Library Assistant
+    </p>
+
+    <p>
+        Built with Python • FastAPI • JavaScript • Machine Learning
+    </p>
+
+</footer>
+
+
+
+<!-- JavaScript -->
+
+<script
+    src="/static/script.js"
+></script>
+
+
+</body>
+
+</html>
